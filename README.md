@@ -1,6 +1,7 @@
 # Sleep-Health-Lifestyle-analysis
 
 
-![Figure_3](https://github.com/BillysKes/Sleep-Health-Lifestyle-analysis/assets/73298709/804fd71d-0357-42a9-b2a7-f0eb9c6d60c5)
-![Figure_2](https://github.com/BillysKes/Sleep-Health-Lifestyle-analysis/assets/73298709/60d243c9-1b86-4dc9-a1c3-91b5ebb01f17)
-![Figure_1](https://github.com/BillysKes/Sleep-Health-Lifestyle-analysis/assets/73298709/86c15954-456a-4405-b1cf-212d9c759f80)
+
+![Figure_3](https://github.com/BillysKes/Sleep-Health-Lifestyle-analysis/assets/73298709/40308ab7-7b01-45c0-aded-042c40afeeaf)
+![Figure_2](https://github.com/BillysKes/Sleep-Health-Lifestyle-analysis/assets/73298709/ff6c2bef-e995-4ea6-8c06-7d2fa38b8db6)
+![Figure_1](https://github.com/BillysKes/Sleep-Health-Lifestyle-analysis/assets/73298709/390ab37a-6168-4c28-8971-654ba53048b7)
