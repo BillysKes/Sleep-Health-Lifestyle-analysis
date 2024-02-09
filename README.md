@@ -6,3 +6,4 @@
 ![whohasbetterqualityofsleepbasedonsleepdisorder](https://github.com/BillysKes/Sleep-Health-Lifestyle-analysis/assets/73298709/dcdaabf0-1dd0-47ad-98df-f897816f74b7)
 
 ![avgsleepqualitybybmi](https://github.com/BillysKes/Sleep-Health-Lifestyle-analysis/assets/73298709/686aaa9b-ec19-4d47-871d-32fea3430e8d)
+![groupbyBarcharts](https://github.com/BillysKes/Sleep-Health-Lifestyle-analysis/assets/73298709/accbbf55-ab7b-49ed-b819-1a659c0c45d6)
