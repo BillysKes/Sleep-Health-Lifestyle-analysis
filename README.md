@@ -1,6 +1,9 @@
 ![genderpopulation](https://github.com/BillysKes/Sleep-Health-Lifestyle-analysis/assets/73298709/dddddd7b-ff99-4c2d-b7e9-0f7d99a5a28e)
+
+![sleepdisorderDistribution](https://github.com/BillysKes/Sleep-Health-Lifestyle-analysis/assets/73298709/d4be3d68-97c3-4252-b57b-a9ab30203a39)
+![bmicategoryDistribution](https://github.com/BillysKes/Sleep-Health-Lifestyle-analysis/assets/73298709/1517f2db-db2b-48b7-a123-090ed1375d6d)
+
 ![sleepdisordercount](https://github.com/BillysKes/Sleep-Health-Lifestyle-analysis/assets/73298709/1da92e5e-d2e7-44d2-8a55-7c31fb84054f)
 ![scatterplots](https://github.com/BillysKes/Sleep-Health-Lifestyle-analysis/assets/73298709/987df6e0-d07f-4de2-a94e-69ccee17d74c)
 ![Figuresubplot](https://github.com/BillysKes/Sleep-Health-Lifestyle-analysis/assets/73298709/cdc2a4af-479f-46f4-aec0-f75c032da4f5)
-![sleepdisordercount](https://github.com/BillysKes/Sleep-Health-Lifestyle-analysis/assets/73298709/1da92e5e-d2e7-44d2-8a55-7c31fb84054f)
 ![groupbyBarcharts](https://github.com/BillysKes/Sleep-Health-Lifestyle-analysis/assets/73298709/accbbf55-ab7b-49ed-b819-1a659c0c45d6)
