@@ -1,4 +1,4 @@
-# Sleep-Health-Lifestyle-analysis
+![avgsleepqualitybybmi](https://github.com/BillysKes/Sleep-Health-Lifestyle-analysis/assets/73298709/9c13feec-52db-48ce-97c8-aa1d22017dd2)# Sleep-Health-Lifestyle-analysis
 
 
 ![genderpopulation](https://github.com/BillysKes/Sleep-Health-Lifestyle-analysis/assets/73298709/dddddd7b-ff99-4c2d-b7e9-0f7d99a5a28e)
@@ -10,3 +10,5 @@
 ![qualitysleepstresslevel](https://github.com/BillysKes/Sleep-Health-Lifestyle-analysis/assets/73298709/fdff95ac-824a-4cd6-baf1-00e7ecb51c52)
 ![sleepdisordercount](https://github.com/BillysKes/Sleep-Health-Lifestyle-analysis/assets/73298709/1da92e5e-d2e7-44d2-8a55-7c31fb84054f)
 ![whohasbetterqualityofsleepbasedonsleepdisorder](https://github.com/BillysKes/Sleep-Health-Lifestyle-analysis/assets/73298709/dcdaabf0-1dd0-47ad-98df-f897816f74b7)
+
+![avgsleepqualitybybmi](https://github.com/BillysKes/Sleep-Health-Lifestyle-analysis/assets/73298709/686aaa9b-ec19-4d47-871d-32fea3430e8d)
