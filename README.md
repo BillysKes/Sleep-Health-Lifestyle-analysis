@@ -3,10 +3,12 @@ The aim of this data science project is to analyze the Sleep Health and Lifestyl
 
 
 ## Dataset
-The dataset used in this project can be through Kaggle. You can find more information here : https://www.kaggle.com/datasets/uom190346a/sleep-health-and-lifestyle-dataset
+The dataset used in this project can be accessed  through Kaggle. You can find more information here : https://www.kaggle.com/datasets/uom190346a/sleep-health-and-lifestyle-dataset
 
 
 ## Bar Charts
+
+Among the four BMI categories, Majority of individuals have normal body mass index or they are overweight while individuals with normal BMI are slightly more numbered compared to overweight. Also, most individuals don't have any sleep disorder but those who have ie.sleep apnea, insomnia, if combined, they are almost as equal in number compared to those who don't have any sleep problems. Observing the distribution of individuals divided among different occupations we understands that nurse, doctors and engineers are the majority.
 
 ![barcharts](https://github.com/BillysKes/Sleep-Health-Lifestyle-analysis/assets/73298709/b86258dc-aab8-4e91-9c7d-53c677fb18f9)
 
