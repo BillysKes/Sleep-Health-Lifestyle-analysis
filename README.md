@@ -24,6 +24,11 @@ There is a high positive correlation of quality of sleep and sleep duration whic
 
 
 ## Histograms
+
+- most individuals heart rate is on the range of 65-73 bpm(bits per minute)
+- most individual's quality of sleep score is between 6 and 9 
+- most individuals are between 43 and 45 years old
+
 ![Figuresubplot](https://github.com/BillysKes/Sleep-Health-Lifestyle-analysis/assets/73298709/cdc2a4af-479f-46f4-aec0-f75c032da4f5)
 
 
