@@ -14,8 +14,7 @@ Among the four BMI categories, Majority of individuals have normal body mass ind
 
 ![occupationsDistrib](https://github.com/BillysKes/Sleep-Health-Lifestyle-analysis/assets/73298709/4ccd2666-66fb-4c9f-ad1d-c6cba99323d2)
 
-![groupbyBarcharts](https://github.com/BillysKes/Sleep-Health-Lifestyle-analysis/assets/73298709/accbbf55-ab7b-49ed-b819-1a659c0c45d6)
-
+![histogramsNewBetter](https://github.com/BillysKes/Sleep-Health-Lifestyle-analysis/assets/73298709/0d1f6d44-e2d4-49ad-a5b0-de421b5077b6)
 
 ## Scatter Plots
 There is a high positive correlation of quality of sleep and sleep duration which means that individuals who sleep longer have higher scores on quality of sleep. Also, there is a negative correlation of heart rate and daily steps which means, individuals who doens't walk a lot tend to have higher heart rate. Also, there is a positive correlation of sbP and dBP which means, individuals with high systolic blood pressure also have high diastolic blood pressure and the reverse. We also notice that high stress levels are associated with low quality of sleep(negative correlation).
