@@ -5,18 +5,35 @@ import matplotlib.pyplot as plt
 from pandas.api.types import CategoricalDtype
 from scipy import stats
 
+
+def graph_plot(type, x, y, xlabel, ylabel, isSubplot):
+    if type == 'hist':
+        if y == 0:
+            plt.hist(x)  # create proportion percentage plots also
+        else:
+            plt.hist(x,y)  # create proportion percentage plots also
+    elif type == 'scatter':
+        plt.scatter(x, y)
+    elif type == 'bar':
+        plt.bar(x, y)
+    plt.ylabel(ylabel)
+    plt.xlabel(xlabel)
+
+
+def my_function(): # gia emfanisi timwn tou graph
+    print("Hello from a function")
+
 df = pd.read_csv('Sleep_health_and_lifestyle_dataset.csv')
-#df.loc[df['BMI Category'] == 'Normal Weight'] = 'Under Weight'
+# df.loc[df['BMI Category'] == 'Normal Weight'] = 'Under Weight'
 df['BMI Category'].replace('Normal Weight', 'Under Weight', inplace=True)
 df['Sleep Disorder'].replace(np.nan, 'None', inplace=True)
-
-#print(df['Sleep Disorder'].describe())
-#exit(df.loc[df['Sleep Disorder'] == 'None'])
-pd.set_option('display.max_columns', None) #
-pd.set_option('display.width', None)         # fit more columns
+# print(df['Sleep Disorder'].describe())
+# exit(df.loc[df['Sleep Disorder'] == 'None'])
+pd.set_option('display.max_columns', None)  #
+pd.set_option('display.width', None)  # fit more columns
 df[['sBP', 'dBP']] = df['Blood Pressure'].str.split('/', expand=True)
 df[['sBP', 'dBP']] = df[['sBP', 'dBP']].astype(int)
-#print(df)
+# print(df)
 
 '''missing_values = df.isnull().sum()
 print("Missing Values:\n", missing_values)
@@ -38,107 +55,91 @@ for column in df.columns:
 print("\nmean calculation :\n ", df.mean(numeric_only=True))
 print("\nmedian calculation :\n ", df.median(numeric_only=True))
 print("\nmode calculation :\n ", df.mode(numeric_only=True))
-print("\nstandard deviation :\n ",df.std(numeric_only=True))
-print(df[['Gender', 'BMI Category','Sleep Disorder']].value_counts(),"\n") #frequencies
-#exit()
+print("\nstandard deviation :\n ", df.std(numeric_only=True))
+print(df[['Gender', 'BMI Category', 'Sleep Disorder']].value_counts(), "\n")  # frequencies
+# exit()
 ###### data visualization
 
 plt.subplot(1, 4, 1)
-plt.hist(df['Age']) # create proportion percentage plots also
-plt.ylabel('Frequency')
-plt.xlabel('Age')
+graph_plot('hist', df['Age'],0,'Age','Frequency',True)
 plt.subplot(1, 4, 2)
-plt.hist(df['Heart Rate'])
-plt.ylabel('Frequency')
-plt.xlabel('Heart rate(bpm)')
-plt.subplot(1,4,3)
-plt.hist(df['Daily Steps'])
-plt.ylabel('Frequency')
-plt.xlabel('Daily Steps')
-plt.subplot(1,4,4)
-plt.hist(df['Quality of Sleep'])
-plt.ylabel('Frequency')
-plt.xlabel('Quality of Sleep')
+graph_plot('hist', df['Heart Rate'],0,'Heart rate(bpm)','Frequency',True)
+plt.subplot(1, 4, 3)
+graph_plot('hist', df['Daily Steps'],0,'Daily Steps','Frequency',True)
+plt.subplot(1, 4, 4)
+graph_plot('hist', df['Quality of Sleep'],0,'Quality of Sleep','Frequency',True)
 
 plt.figure(figsize=(8, 6))
-x, y = df['Quality of Sleep'], df['Sleep Duration']
 plt.subplot(1, 4, 1)
-plt.scatter(x, y)
-plt.ylabel('Sleep Duration')
-plt.xlabel('Quality of Sleep')
-x, y = df['Heart Rate'], df['Daily Steps']
+graph_plot('scatter', df['Quality of Sleep'], df['Sleep Duration'], 'Quality of Sleep', 'Sleep Duration', True)
 plt.subplot(1, 4, 2)
-plt.scatter(x, y)
-plt.ylabel('Daily Steps')
-plt.xlabel('Heart Rate')
-x, y = df['sBP'], df['dBP']
+graph_plot('scatter', df['Heart Rate'], df['Daily Steps'], 'Heart Rate', 'Daily Steps', True)
 plt.subplot(1, 4, 3)
-plt.scatter(x, y)
-plt.ylabel('dBP')
-plt.xlabel('sBP')
-x, y = df['Quality of Sleep'], df['Stress Level']
+graph_plot('scatter', df['sBP'], df['dBP'], 'sBP', 'dBP', True)
 plt.subplot(1, 4, 4)
-plt.scatter(x, y)
-plt.ylabel('Stress Level')
-plt.xlabel('Quality of Sleep')
+graph_plot('scatter', df['Quality of Sleep'], df['Stress Level'], 'Quality of Sleep', 'Stress Level', True)
 
 plt.figure(figsize=(8, 6))
 occupation_count = df['Occupation'].value_counts().reset_index()
-plt.bar(occupation_count['Occupation'], occupation_count['count'])
-plt.ylabel('Population')
-plt.xlabel('Occupation')
+graph_plot('bar', occupation_count['Occupation'], occupation_count['count'], 'Occupation', 'Population', True)
+
 plt.figure(figsize=(8, 6))
 gender_population = df['Gender'].value_counts().reset_index()
 plt.subplot(2, 2, 1)
-plt.bar(gender_population['Gender'], gender_population['count'])
-plt.ylabel('Population')
-plt.xlabel('Gender')
+graph_plot('bar', gender_population['Gender'], gender_population['count'], 'Gender', 'Population', True)
+
 desired_order = ['Under Weight', 'Normal', 'Overweight', 'Obese']
 df['BMI Category'] = pd.Categorical(df['BMI Category'], categories=desired_order, ordered=True)
-#exit(df['BMI Category'].unique())
-
 plt.subplot(2, 2, 3)
 bmiCategory_counts = df['BMI Category'].value_counts().reset_index()
 bmiCategory_counts = bmiCategory_counts.sort_values('BMI Category')
-plt.bar(bmiCategory_counts['BMI Category'], bmiCategory_counts['count'])
-plt.xlabel('BMI Category')
-plt.ylabel('Count')
 plt.title('BMI Category Distribution')
+graph_plot('bar', bmiCategory_counts['BMI Category'], bmiCategory_counts['count'], 'BMI Category', 'Count', True)
+
 plt.subplot(2, 2, 4)
 sleep_disorder_counts = df['Sleep Disorder'].value_counts().reset_index()
-plt.bar(sleep_disorder_counts['Sleep Disorder'], sleep_disorder_counts['count'])
-plt.xlabel('Sleep Disorder')
-plt.ylabel('Count')
+graph_plot('bar', sleep_disorder_counts['Sleep Disorder'], sleep_disorder_counts['count'], 'Sleep Disorder', 'Count', True)
 
 plt.figure(figsize=(8, 6))
-mean_sleep_quality_by_slDisorder = df.groupby('Sleep Disorder')['Quality of Sleep'].mean()
-mean_sleep_quality_by_slDisorder=mean_sleep_quality_by_slDisorder.reset_index()
+avgSleepQltBySlDisorder = round(df.groupby('Sleep Disorder')['Quality of Sleep'].mean(), 2)
+avgSleepQltBySlDisorder = avgSleepQltBySlDisorder.reset_index()
 plt.subplot(1, 4, 1)
-plt.bar(mean_sleep_quality_by_slDisorder['Sleep Disorder'], mean_sleep_quality_by_slDisorder['Quality of Sleep'])
-plt.xlabel('Sleep Disorder')
-plt.ylabel('Quality of sleep (AVG)')
-mean_sleep_duration_by_slDisorder = df.groupby('Sleep Disorder')['Sleep Duration'].mean()
-mean_sleep_duration_by_slDisorder = mean_sleep_duration_by_slDisorder.reset_index()
+graph_plot('bar', avgSleepQltBySlDisorder['Sleep Disorder'], avgSleepQltBySlDisorder['Quality of Sleep'], 'Sleep Disorder', 'Quality of sleep (AVG)', True)
+for i, v in enumerate(avgSleepQltBySlDisorder['Quality of Sleep']):
+    plt.text(i, v, str(v), ha='center')
+
+avgSleepDrtBySlDisorder = round(df.groupby('Sleep Disorder')['Sleep Duration'].mean(), 2)
+avgSleepDrtBySlDisorder = avgSleepDrtBySlDisorder.reset_index()
 plt.subplot(1, 4, 2)
-plt.bar(mean_sleep_quality_by_slDisorder['Sleep Disorder'], mean_sleep_duration_by_slDisorder['Sleep Duration'])
-plt.xlabel('Sleep Disorder')
-plt.ylabel('Sleep Duration (AVG)')
-mean_stressLvl_by_sleepDisorder = df.groupby('Sleep Disorder')['Stress Level'].mean()
-mean_stressLvl_by_sleepDisorder = mean_stressLvl_by_sleepDisorder.reset_index()
+graph_plot('bar', avgSleepDrtBySlDisorder['Sleep Disorder'], avgSleepDrtBySlDisorder['Sleep Duration'], 'Sleep Disorder', 'Sleep Duration (AVG)', True)
+for i, v in enumerate(avgSleepDrtBySlDisorder['Sleep Duration']):
+    plt.text(i, v, str(v), ha='center')
+
+avgStressLvlBySlDisorder = round(df.groupby('Sleep Disorder')['Stress Level'].mean(), 2)
+avgStressLvlBySlDisorder = avgStressLvlBySlDisorder.reset_index()
 plt.subplot(1, 4, 3)
-plt.bar(mean_stressLvl_by_sleepDisorder['Sleep Disorder'], mean_stressLvl_by_sleepDisorder['Stress Level'])
-plt.xlabel('Sleep Disorder')
-plt.ylabel('Stress Level (AVG)')
-mean_sleep_quality_by_bmi = df.groupby('BMI Category')['Quality of Sleep'].mean()
-mean_sleep_quality_by_bmi = mean_sleep_quality_by_bmi.reset_index()
+graph_plot('bar', avgStressLvlBySlDisorder['Sleep Disorder'], avgStressLvlBySlDisorder['Stress Level'], 'Sleep Disorder', 'Stress Level (AVG)', True)
+for i, v in enumerate(avgStressLvlBySlDisorder['Stress Level']):
+    plt.text(i, v, str(v), ha='center')
+
+avgSleepQltByBmi = round(df.groupby('BMI Category')['Quality of Sleep'].mean(), 2)
+avgSleepQltByBmi = avgSleepQltByBmi.reset_index()
 plt.subplot(1, 4, 4)
-plt.bar(mean_sleep_quality_by_bmi['BMI Category'], mean_sleep_quality_by_bmi['Quality of Sleep'])
-plt.xlabel('BMI Category')
-plt.ylabel('Quality of sleep (AVG)')
-#plt.title('BMI Category Distribution')
+graph_plot('bar', avgSleepQltByBmi['BMI Category'], avgSleepQltByBmi['Quality of Sleep'], 'BMI Category', 'Quality of sleep (AVG)', True)
+for i, v in enumerate(avgSleepQltByBmi['Quality of Sleep']):
+    plt.text(i, v, str(v), ha='center')
+# plt.title('BMI Category Distribution')
+plt.figure(figsize=(8, 6))
+avgPhysicalActvLvlBybmi = df.groupby('BMI Category')['Physical Activity Level'].mean()
+avgPhysicalActvLvlBybmi = avgPhysicalActvLvlBybmi.reset_index()
+graph_plot('bar', avgPhysicalActvLvlBybmi['BMI Category'], avgPhysicalActvLvlBybmi['Physical Activity Level'], 'BMI Category', 'Physical Activity Level (AVG)', True)
+
+plt.figure(figsize=(8, 6))
+avgPhysicalActvLvlBySlDisorders = df.groupby('Sleep Disorder')['Physical Activity Level'].mean()
+avgPhysicalActvLvlBySlDisorders = avgPhysicalActvLvlBySlDisorders.reset_index()
+graph_plot('bar', avgPhysicalActvLvlBySlDisorders['Sleep Disorder'], avgPhysicalActvLvlBySlDisorders['Physical Activity Level'], 'Sleep Disorder', 'Physical Activity Level (AVG)', True)
 plt.show()
 plt.savefig(sys.stdout.buffer)
 sys.stdout.flush()
-
 ###### correlation analysis
 print("\ncorrelations: ", df.corr(numeric_only=True))
