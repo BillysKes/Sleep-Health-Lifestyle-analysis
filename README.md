@@ -12,7 +12,11 @@ Among the four BMI categories, Majority of individuals have normal body mass ind
 
 - Population of males and females are equal
 - Most individuals in the dataset have a normal body mass index or they are are in the overweight category
-- 60% of the individuals doesn't have any sleep disorder while the rest have insomnia or apnea equally 
+- Almost 60% of the individuals doesn't have any sleep disorder while the rest have insomnia or sleep apnea equally
+- Doctors, nurses, engineers and lawyers mainly took part in this research analysis
+- Individuals with insomnia have worse quality of sleep and smaller duration of sleep compared to individuals with sleep apnea
+- Stress level is slightly higher for individuals who have insomnia compared to those who have sleep apnea. However, individuals who doesnt't any sleep disorder have similar stress levels on average.
+- Quality of sleep significantly drops for overweight and obese individuals. 
 
 ![barcharts](https://github.com/BillysKes/Sleep-Health-Lifestyle-analysis/assets/73298709/b86258dc-aab8-4e91-9c7d-53c677fb18f9)
 
@@ -25,7 +29,6 @@ Among the four BMI categories, Majority of individuals have normal body mass ind
 
 ![histogramsNewBetter](https://github.com/BillysKes/Sleep-Health-Lifestyle-analysis/assets/73298709/0d1f6d44-e2d4-49ad-a5b0-de421b5077b6)
 
-![occupationsPie](https://github.com/BillysKes/Sleep-Health-Lifestyle-analysis/assets/73298709/078bf9e6-d48a-441c-b662-add9b42997cc)
 
 
 ## Scatter Plots
