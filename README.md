@@ -6,13 +6,22 @@ The aim of this data science project is to analyze the Sleep Health and Lifestyl
 The dataset used in this project can be accessed  through Kaggle. You can find more information here : https://www.kaggle.com/datasets/uom190346a/sleep-health-and-lifestyle-dataset
 
 
-## Bar Charts
+## Bar-Pie Charts
 
 Among the four BMI categories, Majority of individuals have normal body mass index or they are overweight while individuals with normal BMI are slightly more numbered compared to overweight. Also, most individuals don't have any sleep disorder but those who have ie.sleep apnea, insomnia, if combined, they are almost as equal in number compared to those who don't have any sleep problems. Observing the distribution of individuals divided among different occupations we understands that nurse, doctors and engineers are the majority. Also, individuals with insomnia have the worst score on quality of sleep, with a score of 6.5 while individuals who don't have any sleep disorder score at 7.5, so it is noticable that sleep disorders affects sleep quality. We end up on the same conclusion when we examine the relation of sleep disorders and the amount of sleep individuals have on average. Stress levels are also higher for people having insomnia or sleep apnea. Also, examining the average quality of sleep of individuals with different body mass index, we obverve worse score for due to sleep apnea and insomnia compared to normal BMI.
 
+- Population of males and females are equal
+- Most individuals in the dataset have a normal body mass index or they are are in the overweight category
+- 60% of the individuals doesn't have any sleep disorder while the rest have insomnia or apnea equally 
+
 ![barcharts](https://github.com/BillysKes/Sleep-Health-Lifestyle-analysis/assets/73298709/b86258dc-aab8-4e91-9c7d-53c677fb18f9)
 
+![sleep disorders pie](https://github.com/BillysKes/Sleep-Health-Lifestyle-analysis/assets/73298709/c06a376e-5138-4445-9eb2-47cb01ff42f3)
+
 ![occupationsDistrib](https://github.com/BillysKes/Sleep-Health-Lifestyle-analysis/assets/73298709/4ccd2666-66fb-4c9f-ad1d-c6cba99323d2)
+
+![occupationsPie](https://github.com/BillysKes/Sleep-Health-Lifestyle-analysis/assets/73298709/4cfdee09-58fc-4695-8e93-5ce80da29e69)
+
 
 ![histogramsNewBetter](https://github.com/BillysKes/Sleep-Health-Lifestyle-analysis/assets/73298709/0d1f6d44-e2d4-49ad-a5b0-de421b5077b6)
 
