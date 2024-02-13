@@ -2,6 +2,7 @@ import sys
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+import seaborn as sb
 from pandas.api.types import CategoricalDtype
 from scipy import stats
 
@@ -39,6 +40,12 @@ pd.set_option('display.max_columns', None)  #
 pd.set_option('display.width', None)  # fit more columns
 df[['sBP', 'dBP']] = df['Blood Pressure'].str.split('/', expand=True)
 df[['sBP', 'dBP']] = df[['sBP', 'dBP']].astype(int)
+df.loc[(df['sBP'] < 120) & (df['dBP'] < 80), 'BP category'] = 'normal'
+df.loc[(((df['sBP'] < 130) & (df['sBP'] >= 120)) & (df['dBP'] < 80)), 'BP category'] = 'elevated'
+df.loc[(((df['sBP']) < 140 & (df['sBP'] >= 130)) | ((df['dBP'] < 90) & (df['dBP'] >= 80))), 'BP category'] = 'hypertension stage 1'
+df.loc[(df['sBP'] >= 140) | (df['dBP'] >= 90), 'BP category'] = 'hypertension stage 2'
+
+
 # print(df)
 
 '''missing_values = df.isnull().sum()
@@ -57,12 +64,19 @@ for column in df.columns:
     print(df[column].unique())
 
 '''
+#print(df.corr(numeric_only=True))
+#sns.heatmap(df.corr(numeric_only=True))
+#sb.heatmap(df.corr(numeric_only=True), cmap="YlGnBu", annot=True)
+#plt.show()
+#exit()
+
 ####### summary statistics
 print("\nmean calculation :\n ", df.mean(numeric_only=True))
 print("\nmedian calculation :\n ", df.median(numeric_only=True))
 print("\nmode calculation :\n ", df.mode(numeric_only=True))
 print("\nstandard deviation :\n ", df.std(numeric_only=True))
 print(df[['Gender', 'BMI Category', 'Sleep Disorder']].value_counts(), "\n")  # frequencies
+
 
 ###### data visualization
 plt.subplot(1, 4, 1)
@@ -75,6 +89,11 @@ plt.subplot(1, 4, 4)
 graph_plot('hist', df['Quality of Sleep'],0,'Quality of Sleep','Frequency',True)
 plt.figure(figsize=(8, 6))
 graph_plot('hist', df['Stress Level'],0,'Stress Level','Frequency',True)
+plt.figure(figsize=(8, 6))
+plt.subplot(1, 2, 1)
+graph_plot('hist', df['dBP'],0,'dBP','Frequency',True)
+plt.subplot(1, 2, 2)
+graph_plot('hist', df['sBP'],0,'sBP','Frequency',True)
 
 plt.figure(figsize=(8, 6))
 plt.subplot(1, 4, 1)
@@ -106,6 +125,10 @@ graph_plot('bar', bmiCategory_counts['BMI Category'], bmiCategory_counts['count'
 plt.subplot(2, 2, 4)
 sleep_disorder_counts = df['Sleep Disorder'].value_counts().reset_index()
 graph_plot('bar', sleep_disorder_counts['Sleep Disorder'], sleep_disorder_counts['count'], 'Sleep Disorder', 'Count', True)
+
+plt.figure(figsize=(8, 6))
+bpCat_counts = df['BP category'].value_counts().reset_index()
+graph_plot('bar', bpCat_counts['BP category'], bpCat_counts['count'], 'blood pressure category', 'Count', True)
 
 plt.figure(figsize=(8, 6))
 genderCounts = df['Occupation'].value_counts().reset_index()
@@ -155,5 +178,8 @@ graph_plot('bar', avgPhysicalActvLvlBySlDisorders['Sleep Disorder'], avgPhysical
 plt.show()
 plt.savefig(sys.stdout.buffer)
 sys.stdout.flush()
+
+print("\n\n", round(df.describe(),2)) #statistics information
+
 ###### correlation analysis
-print("\ncorrelations: ", df.corr(numeric_only=True))
+print("\ncorrelations: ", round(df.corr(numeric_only=True), 3))
