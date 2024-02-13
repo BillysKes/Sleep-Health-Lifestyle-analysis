@@ -5,6 +5,8 @@ The aim of this data science project is to analyze the Sleep Health and Lifestyl
 ## Dataset
 The dataset used in this project can be accessed  through Kaggle. You can find more information here : https://www.kaggle.com/datasets/uom190346a/sleep-health-and-lifestyle-dataset
 
+## Statistical information
+
 
 ## Bar-Pie Charts
 
@@ -34,7 +36,7 @@ Among the four BMI categories, Majority of individuals have normal body mass ind
 ## Scatter Plots
 There is a high positive correlation of quality of sleep and sleep duration which means that individuals who sleep longer have higher scores on quality of sleep. Also, there is a negative correlation of heart rate and daily steps which means, individuals who doens't walk a lot tend to have higher heart rate. Also, there is a positive correlation of sbP and dBP which means, individuals with high systolic blood pressure also have high diastolic blood pressure and the reverse. We also notice that high stress levels are associated with low quality of sleep(negative correlation).
 
-- Positive correlation of quality of sleep and sleep duration
+- Positive correlation of quality of sleep and sleep duration. As sleep duration increases we notice that individuals report higher ratings on quality of sleep as well whereas the exact opposite happens when sleep duration is shorter.
 - Negative correlation of the heart rate(bpm) and the daily steps taken. Individuals who walk more tend to have more normal heart rate due to the benefits of cardiovascular exercise
 - Positive correlation of systolic blood pressure(SBP) and diastolic blood pressure(DBP)
 - Negative correlation of quality of sleep and stress level. Individuals reporting better quality of sleep tend to report lower stress levels.
@@ -44,9 +46,10 @@ There is a high positive correlation of quality of sleep and sleep duration whic
 
 ## Histograms
 
-- most individuals heart rate is on the range of 65-73 bpm(bits per minute)
+- Positive skewness most individuals heart rate is on the range of 65-73 bpm(bits per minute)
 - most individual's quality of sleep score is between 6 and 9 
-- most individuals are between 43 and 45 years old
+- most individuals are between 45 and 47.5 years old
+- Quality of sleep is a bimodal distribution as it has two peaks. Most frequent quality of sleep rating has a bin range 8-8.5 and 6-6.5 
 
 ![Figuresubplot](https://github.com/BillysKes/Sleep-Health-Lifestyle-analysis/assets/73298709/cdc2a4af-479f-46f4-aec0-f75c032da4f5)
 
