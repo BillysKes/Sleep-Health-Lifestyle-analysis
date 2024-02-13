@@ -56,7 +56,7 @@ There is a high positive correlation of quality of sleep and sleep duration whic
 ![systolicAnddiastolicBP_hist](https://github.com/BillysKes/Sleep-Health-Lifestyle-analysis/assets/73298709/5f628f51-1326-42dc-9911-f8aeaeea268f)
 
 
-
+## Correlation analysis
 ![heatmapCorrelation](https://github.com/BillysKes/Sleep-Health-Lifestyle-analysis/assets/73298709/7777041e-89dd-4317-9b30-e29599b9128f)
 
 
