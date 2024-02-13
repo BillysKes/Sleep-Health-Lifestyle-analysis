@@ -1,11 +1,4 @@
 
-##### Table of Contents  
-[Headers](#headers)  
-[Emphasis](#emphasis)  
-...snip...    
-<a name="headers"/>
-## Headers
-
 
 ## Project overview
 The aim of this data science project is to analyze the Sleep Health and Lifestyle Dataset, which encompasses 400 rows and 13 columns. This dataset provides comprehensive insights into various factors influencing sleep quality and daily habits among individuals. By implementing Exploratory Data Analysis, we intend to uncover patterns, correlations, and significant associations within the data.
