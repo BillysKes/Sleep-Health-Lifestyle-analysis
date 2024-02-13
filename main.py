@@ -7,6 +7,10 @@ from scipy import stats
 
 
 def graph_plot(type, x, y, xlabel, ylabel, isSubplot):
+
+    if type != 'pie':
+        plt.ylabel(ylabel)
+        plt.xlabel(xlabel)
     if type == 'hist':
         if y == 0:
             plt.hist(x)  # create proportion percentage plots also
@@ -16,8 +20,10 @@ def graph_plot(type, x, y, xlabel, ylabel, isSubplot):
         plt.scatter(x, y)
     elif type == 'bar':
         plt.bar(x, y)
-    plt.ylabel(ylabel)
-    plt.xlabel(xlabel)
+    elif type == 'pie':
+        plt.pie(x, labels=xlabel, autopct='%1.1f%%')
+
+
 
 
 def my_function(): # gia emfanisi timwn tou graph
@@ -57,9 +63,8 @@ print("\nmedian calculation :\n ", df.median(numeric_only=True))
 print("\nmode calculation :\n ", df.mode(numeric_only=True))
 print("\nstandard deviation :\n ", df.std(numeric_only=True))
 print(df[['Gender', 'BMI Category', 'Sleep Disorder']].value_counts(), "\n")  # frequencies
-# exit()
-###### data visualization
 
+###### data visualization
 plt.subplot(1, 4, 1)
 graph_plot('hist', df['Age'],0,'Age','Frequency',True)
 plt.subplot(1, 4, 2)
@@ -68,6 +73,8 @@ plt.subplot(1, 4, 3)
 graph_plot('hist', df['Daily Steps'],0,'Daily Steps','Frequency',True)
 plt.subplot(1, 4, 4)
 graph_plot('hist', df['Quality of Sleep'],0,'Quality of Sleep','Frequency',True)
+plt.figure(figsize=(8, 6))
+graph_plot('hist', df['Stress Level'],0,'Stress Level','Frequency',True)
 
 plt.figure(figsize=(8, 6))
 plt.subplot(1, 4, 1)
@@ -99,6 +106,13 @@ graph_plot('bar', bmiCategory_counts['BMI Category'], bmiCategory_counts['count'
 plt.subplot(2, 2, 4)
 sleep_disorder_counts = df['Sleep Disorder'].value_counts().reset_index()
 graph_plot('bar', sleep_disorder_counts['Sleep Disorder'], sleep_disorder_counts['count'], 'Sleep Disorder', 'Count', True)
+
+plt.figure(figsize=(8, 6))
+genderCounts = df['Occupation'].value_counts().reset_index()
+graph_plot('pie', genderCounts['count'],0,  genderCounts['Occupation'], 0, True)
+
+plt.figure(figsize=(8, 6))
+graph_plot('pie', sleep_disorder_counts['count'], 0,  sleep_disorder_counts['Sleep Disorder'], 0, True)
 
 plt.figure(figsize=(8, 6))
 avgSleepQltBySlDisorder = round(df.groupby('Sleep Disorder')['Quality of Sleep'].mean(), 2)
