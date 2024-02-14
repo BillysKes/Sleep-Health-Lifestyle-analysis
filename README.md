@@ -16,14 +16,14 @@
         
 
 
-## 1. Project overview
+# 1. Project overview
 The aim of this data science project is to analyze the Sleep Health and Lifestyle Dataset, which encompasses 400 rows and 13 columns. This dataset provides comprehensive insights into various factors influencing sleep quality and daily habits among individuals. By implementing Exploratory Data Analysis, we intend to uncover patterns, correlations, and significant associations within the data.
 
 
-## 2. Dataset Description
+# 2. Dataset Description
 The dataset used in this project can be accessed  through Kaggle. You can find more information here : https://www.kaggle.com/datasets/uom190346a/sleep-health-and-lifestyle-dataset
 
-## 3. Statistical information
+# 3. Statistical information
 
 
 # 4. Exploratory Data Analysis (EDA)
@@ -81,10 +81,10 @@ There is a high positive correlation of quality of sleep and sleep duration whic
 ![heatmapCorrelation](https://github.com/BillysKes/Sleep-Health-Lifestyle-analysis/assets/73298709/7777041e-89dd-4317-9b30-e29599b9128f)
 
 
-## 5. Predictive modelling
+# 5. Predictive modelling
 
 
-## 6. Model evaluation
+# 6. Model evaluation
 
 
 
