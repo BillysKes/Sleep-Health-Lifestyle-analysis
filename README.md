@@ -1,12 +1,13 @@
 # Table of Contents
 1. [Project Overview](#project-overview)
 2. [Dataset Description](#dataset-description)
-3. [Exploratory Data Analysis (EDA)](#exploratory-data-analysis-eda)
+3. [Statistical Information](#statistical-information)
+4. [Exploratory Data Analysis (EDA)](#exploratory-data-analysis-eda)
    1. [Bar-Pie Charts](#Bar-Pie-Charts)
    2. [Scatter Plots](#Scatter-Plots)
    3. [Histograms](#Histograms)
-4. [Predictive modelling](predictive-modelling)
-5. [Model evaluation](model-evaluation)
+5. [Predictive modelling](predictive-modelling)
+6. [Model evaluation](model-evaluation)
    
 
 
@@ -22,11 +23,11 @@ The aim of this data science project is to analyze the Sleep Health and Lifestyl
 ## 2. Dataset Description
 The dataset used in this project can be accessed  through Kaggle. You can find more information here : https://www.kaggle.com/datasets/uom190346a/sleep-health-and-lifestyle-dataset
 
-## Statistical information
+## 3. Statistical information
 
 
-# 3. Exploratory Data Analysis (EDA)
-## 3.1 Bar-Pie Charts
+# 4. Exploratory Data Analysis (EDA)
+## 4.1 Bar-Pie Charts
 <a name="Bar-Pie-Charts"></a>
 Among the four BMI categories, Majority of individuals have normal body mass index or they are overweight while individuals with normal BMI are slightly more numbered compared to overweight. Also, most individuals don't have any sleep disorder but those who have ie.sleep apnea, insomnia, if combined, they are almost as equal in number compared to those who don't have any sleep problems. Observing the distribution of individuals divided among different occupations we understands that nurse, doctors and engineers are the majority. Also, individuals with insomnia have the worst score on quality of sleep, with a score of 6.5 while individuals who don't have any sleep disorder score at 7.5, so it is noticable that sleep disorders affects sleep quality. We end up on the same conclusion when we examine the relation of sleep disorders and the amount of sleep individuals have on average. Stress levels are also higher for people having insomnia or sleep apnea. Also, examining the average quality of sleep of individuals with different body mass index, we obverve worse score for due to sleep apnea and insomnia compared to normal BMI.
 
@@ -51,7 +52,7 @@ Among the four BMI categories, Majority of individuals have normal body mass ind
 
 
 
-## 3.2 Scatter Plots
+## 4.2 Scatter Plots
 <a name="Scatter-Plots"></a>
 There is a high positive correlation of quality of sleep and sleep duration which means that individuals who sleep longer have higher scores on quality of sleep. Also, there is a negative correlation of heart rate and daily steps which means, individuals who doens't walk a lot tend to have higher heart rate. Also, there is a positive correlation of sbP and dBP which means, individuals with high systolic blood pressure also have high diastolic blood pressure and the reverse. We also notice that high stress levels are associated with low quality of sleep(negative correlation).
 
@@ -63,7 +64,7 @@ There is a high positive correlation of quality of sleep and sleep duration whic
 ![scatterplots](https://github.com/BillysKes/Sleep-Health-Lifestyle-analysis/assets/73298709/987df6e0-d07f-4de2-a94e-69ccee17d74c)
 
 
-## 3.3 Histograms
+## 4.3 Histograms
 <a name="histograms"></a>
 
 - Positive skewness most individuals heart rate is on the range of 65-73 bpm(bits per minute)
@@ -80,10 +81,10 @@ There is a high positive correlation of quality of sleep and sleep duration whic
 ![heatmapCorrelation](https://github.com/BillysKes/Sleep-Health-Lifestyle-analysis/assets/73298709/7777041e-89dd-4317-9b30-e29599b9128f)
 
 
-## 4. Predictive modelling
+## 5. Predictive modelling
 
 
-## 5. Model evaluation
+## 6. Model evaluation
 
 
 
