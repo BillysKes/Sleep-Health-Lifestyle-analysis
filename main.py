@@ -8,7 +8,6 @@ from scipy import stats
 
 
 def graph_plot(type, x, y, xlabel, ylabel, isSubplot):
-
     if type != 'pie':
         plt.ylabel(ylabel)
         plt.xlabel(xlabel)
@@ -25,17 +24,13 @@ def graph_plot(type, x, y, xlabel, ylabel, isSubplot):
         plt.pie(x, labels=xlabel, autopct='%1.1f%%')
 
 
-
-
 def my_function(): # gia emfanisi timwn tou graph
     print("Hello from a function")
 
+
 df = pd.read_csv('Sleep_health_and_lifestyle_dataset.csv')
-# df.loc[df['BMI Category'] == 'Normal Weight'] = 'Under Weight'
 df['BMI Category'].replace('Normal Weight', 'Under Weight', inplace=True)
 df['Sleep Disorder'].replace(np.nan, 'None', inplace=True)
-# print(df['Sleep Disorder'].describe())
-# exit(df.loc[df['Sleep Disorder'] == 'None'])
 pd.set_option('display.max_columns', None)  #
 pd.set_option('display.width', None)  # fit more columns
 df[['sBP', 'dBP']] = df['Blood Pressure'].str.split('/', expand=True)
@@ -45,9 +40,13 @@ df.loc[(((df['sBP'] < 130) & (df['sBP'] >= 120)) & (df['dBP'] < 80)), 'BP catego
 df.loc[(((df['sBP']) < 140 & (df['sBP'] >= 130)) | ((df['dBP'] < 90) & (df['dBP'] >= 80))), 'BP category'] = 'hypertension stage 1'
 df.loc[(df['sBP'] >= 140) | (df['dBP'] >= 90), 'BP category'] = 'hypertension stage 2'
 
+####### data cleaning
+print('\ndata types : \n', df.dtypes)  # verifying that data types are all correct
+print('\nmissing values : \n', df.isna().sum())  # missing values detection
+print('\nduplicates :\n', df[df.duplicated()])  # duplicates detection
+print('\n\n', df['BP category'].unique())  # Inconsistencies detection - in one column
 
-# print(df)
-
+exit()
 '''missing_values = df.isnull().sum()
 print("Missing Values:\n", missing_values)
 
@@ -62,23 +61,19 @@ print("Outlier Rows:", outlier_rows)
 for column in df.columns:
     print("Column:", column)
     print(df[column].unique())
-
 '''
-#print(df.corr(numeric_only=True))
-#sns.heatmap(df.corr(numeric_only=True))
-#sb.heatmap(df.corr(numeric_only=True), cmap="YlGnBu", annot=True)
-#plt.show()
-#exit()
+plt.figure(figsize=(8, 6))
+sb.heatmap(df.corr(numeric_only=True), cmap="YlGnBu", annot=True)
 
 ####### summary statistics
-print("\nmean calculation :\n ", df.mean(numeric_only=True))
 print("\nmedian calculation :\n ", df.median(numeric_only=True))
 print("\nmode calculation :\n ", df.mode(numeric_only=True))
-print("\nstandard deviation :\n ", df.std(numeric_only=True))
-print(df[['Gender', 'BMI Category', 'Sleep Disorder']].value_counts(), "\n")  # frequencies
+#print(df[['Gender', 'BMI Category', 'Sleep Disorder']].value_counts(), "\n")  # frequencies
+print("\n\n", round(df.describe(),2)) #statistics information
 
 
 ###### data visualization
+plt.figure(figsize=(8, 6))
 plt.subplot(1, 4, 1)
 graph_plot('hist', df['Age'],0,'Age','Frequency',True)
 plt.subplot(1, 4, 2)
@@ -178,8 +173,6 @@ graph_plot('bar', avgPhysicalActvLvlBySlDisorders['Sleep Disorder'], avgPhysical
 plt.show()
 plt.savefig(sys.stdout.buffer)
 sys.stdout.flush()
-
-print("\n\n", round(df.describe(),2)) #statistics information
 
 ###### correlation analysis
 print("\ncorrelations: ", round(df.corr(numeric_only=True), 3))
