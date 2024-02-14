@@ -25,6 +25,7 @@ The dataset used in this project can be accessed  through Kaggle. You can find m
 ## Statistical information
 
 
+# 3. Exploratory Data Analysis (EDA)
 ## 3.1 Bar-Pie Charts
 <a name="Bar-Pie-Charts"></a>
 Among the four BMI categories, Majority of individuals have normal body mass index or they are overweight while individuals with normal BMI are slightly more numbered compared to overweight. Also, most individuals don't have any sleep disorder but those who have ie.sleep apnea, insomnia, if combined, they are almost as equal in number compared to those who don't have any sleep problems. Observing the distribution of individuals divided among different occupations we understands that nurse, doctors and engineers are the majority. Also, individuals with insomnia have the worst score on quality of sleep, with a score of 6.5 while individuals who don't have any sleep disorder score at 7.5, so it is noticable that sleep disorders affects sleep quality. We end up on the same conclusion when we examine the relation of sleep disorders and the amount of sleep individuals have on average. Stress levels are also higher for people having insomnia or sleep apnea. Also, examining the average quality of sleep of individuals with different body mass index, we obverve worse score for due to sleep apnea and insomnia compared to normal BMI.
