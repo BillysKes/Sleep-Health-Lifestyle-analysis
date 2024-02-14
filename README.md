@@ -62,6 +62,7 @@ There is a high positive correlation of quality of sleep and sleep duration whic
 
 
 ## Histograms
+<a name="histograms"></a>
 
 - Positive skewness most individuals heart rate is on the range of 65-73 bpm(bits per minute)
 - most individual's quality of sleep score is between 6 and 9 
