@@ -2,6 +2,7 @@
 1. [Project Overview](#project-overview)
 2. [Dataset Description](#dataset-description)
 3. [Exploratory Data Analysis (EDA)](#exploratory-data-analysis-eda)
+  4. 
   3.1 [Bar-Pie Charts](#Bar-Pie-Charts)
   3.2 [Scatter Plots](#Scatter-Plots)
   3.3 [Histograms](#Histograms)
