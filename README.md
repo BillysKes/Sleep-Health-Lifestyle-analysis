@@ -53,6 +53,7 @@ Among the four BMI categories, Majority of individuals have normal body mass ind
 
 ![avgBPbySldisorder](https://github.com/BillysKes/Sleep-Health-Lifestyle-analysis/assets/73298709/6772ee33-b1cd-4fdc-bae3-460cd33aa038)
 
+![bmiDistributionperSleepDisorder](https://github.com/BillysKes/Sleep-Health-Lifestyle-analysis/assets/73298709/1c28a43c-538f-433f-804b-684cac6d7422)
 
 
 ## 4.2 Scatter Plots
