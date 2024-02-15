@@ -8,21 +8,18 @@ from scipy import stats
 
 
 def graph_plot(type, x, y, xlabel, ylabel, isSubplot, color):
-    if type != 'pie':
+    if (type != 'pie') | (ylabel != 0):
         plt.ylabel(ylabel)
         plt.xlabel(xlabel)
     if type == 'hist':
-        if y == 0:
-            plt.hist(x)  # create proportion percentage plots also
-        else:
-            plt.hist(x,y)  # create proportion percentage plots also
+        plt.hist(x)
     elif type == 'scatter':
         plt.scatter(x, y)
     elif type == 'bar':
-        if ylabel == 0:
+        if ylabel == 0:  # multibar
             return plt.bar(x, y, 0.4, label=xlabel, color=color)
         plt.bar(x, y, 0.4)
-    elif type == 'pie':
+    if type == 'pie':
         plt.pie(x, labels=xlabel, autopct='%1.1f%%')
 
 
@@ -129,7 +126,7 @@ graph_plot('bar', bpCat_counts['BP category'], bpCat_counts['count'], 'blood pre
 
 plt.figure(figsize=(8, 6))
 genderCounts = df['Occupation'].value_counts().reset_index()
-graph_plot('pie', genderCounts['count'],0,  genderCounts['Occupation'], 0, True, ['r', 'g', 'b'])
+graph_plot('pie', genderCounts['count'], 0,  genderCounts['Occupation'], 0, True, ['r', 'g', 'b'])
 
 plt.figure(figsize=(8, 6))
 graph_plot('pie', sleep_disorder_counts['count'], 0,  sleep_disorder_counts['Sleep Disorder'], 0, True, ['r', 'g', 'b'])
@@ -184,8 +181,31 @@ bar2 = graph_plot('bar', X_axis+0.2, avgDBPbySlDisorders['dBP'], 'Diastolic BP',
 plt.xticks(X_axis, avgSBPbySlDisorders['Sleep Disorder'])
 plt.xlabel("Sleep Disorder")
 plt.ylabel("Blood Pressure (AVG)")
-plt.title("Average blood pressure in each sleep disorder category")
+plt.title("Average blood pressure per sleep disorder category")
 plt.legend((bar1, bar2), ('Systolic BP', 'Diastolic BP'), facecolor='white')
+
+
+plt.figure(figsize=(8, 6))
+N = 3
+ind = np.arange(N)
+width = 0.2  # Adjust the width as needed
+slDisorderPerBMIcat = df.groupby('Sleep Disorder')['BMI Category'].value_counts().reset_index()
+exit(slDisorderPerBMIcat)
+xvals = slDisorderPerBMIcat.loc[slDisorderPerBMIcat['BMI Category'] == 'Under Weight', 'count']
+bar1 = plt.bar(ind - width, xvals, width, color='r')
+yvals = slDisorderPerBMIcat.loc[slDisorderPerBMIcat['BMI Category'] == 'Normal', 'count']
+bar2 = plt.bar(ind, yvals, width, color='g')
+zvals = slDisorderPerBMIcat.loc[slDisorderPerBMIcat['BMI Category'] == 'Overweight', 'count']
+bar3 = plt.bar(ind + width, zvals, width, color='b')
+kvals = slDisorderPerBMIcat.loc[slDisorderPerBMIcat['BMI Category'] == 'Obese', 'count']
+bar4 = plt.bar(ind + 2*width, kvals, width, color='y')
+plt.xlabel("Sleep disorder")
+plt.ylabel('Counts')
+plt.title("Distribution of BMI categories per sleep disorder")
+plt.xticks(ind + width, slDisorderPerBMIcat['Sleep Disorder'].unique())
+plt.legend((bar1, bar2, bar3, bar4), ('Underweight ', 'Normal', 'Overweight', 'Obese'))
+#exit(slDisorderPerBMIcat['Insomnia'])
+
 
 
 plt.show()
