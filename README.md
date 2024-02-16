@@ -88,6 +88,9 @@ There is a high positive correlation of quality of sleep and sleep duration whic
 
 ![betterheatmap](https://github.com/BillysKes/Sleep-Health-Lifestyle-analysis/assets/73298709/56c06e40-2542-47a2-9866-be421a680849)
 
+![pair plot ](https://github.com/BillysKes/Sleep-Health-Lifestyle-analysis/assets/73298709/d8dcb03d-036a-40e2-83d3-2ec837ddbd2f)
+![pair plot for SbpDbppng](https://github.com/BillysKes/Sleep-Health-Lifestyle-analysis/assets/73298709/7bc372c8-2fbd-4a4c-9218-9449cb37df7f)
+
 
 # 5. Predictive modelling
 
