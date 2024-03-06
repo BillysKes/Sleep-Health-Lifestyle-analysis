@@ -6,7 +6,7 @@
    1. [Bar-Pie Charts](#Bar-Pie-Charts)
    2. [Scatter Plots](#Scatter-Plots)
    3. [Histograms](#Histograms)
-5. [Predictive modelling](predictive-modelling)
+5. [Classification](#classification)
 6. [Model evaluation](model-evaluation)
    
 
