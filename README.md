@@ -3,11 +3,13 @@
 2. [Dataset Description](#dataset-description)
 3. [Statistical Information](#statistical-information)
 4. [Exploratory Data Analysis (EDA)](#exploratory-data-analysis-eda)
-   1. [Bar-Pie Charts](#Bar-Pie-Charts)
-   2. [Scatter Plots](#Scatter-Plots)
-   3. [Histograms](#Histograms)
-5. [Classification](#classification)
-6. [Model evaluation](model-evaluation)
+   1. [Visualizations](#visualizations)
+      1. [Bar-Pie Charts](#Bar-Pie-Charts)
+      2. [Scatter Plots](#Scatter-Plots)
+      3. [Histograms](#Histograms)
+   2. [Correlation analysis]
+6. [Classification](#classification)
+7. [Model evaluation](model-evaluation)
    
 
 
@@ -27,7 +29,7 @@ The dataset used in this project can be accessed  through Kaggle. You can find m
 
 
 # 4. Exploratory Data Analysis (EDA)
-## 4.1 Bar-Pie Charts
+## Bar-Pie Charts
 <a name="Bar-Pie-Charts"></a>
 
 
