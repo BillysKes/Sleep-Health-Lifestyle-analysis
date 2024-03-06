@@ -21,7 +21,7 @@
 
 
 # 1. Project overview
-The aim of this project is to analyze the Sleep Health and Lifestyle Dataset, which include 400 rows and 13 columns. This dataset provides comprehensive insights into various factors influencing sleep quality and daily habits among individuals. By implementing Exploratory Data Analysis, we intend to uncover patterns, correlations, and significant associations within the data.
+The aim of this project is to analyze the Sleep Health and Lifestyle Dataset, which include 400 rows and 13 columns. This dataset provides comprehensive insights into various factors influencing sleep quality and daily habits among individuals. By implementing Exploratory Data Analysis, we intend to uncover patterns, correlations, and significant associations within the data. Finally, we also intend to predict if an individual has a sleep disorder using classification algorithms.
 
 
 # 2. Dataset Description
