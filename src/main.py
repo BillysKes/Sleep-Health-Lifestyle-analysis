@@ -5,8 +5,8 @@ import matplotlib.pyplot as plt
 import seaborn as sb
 from pandas.api.types import CategoricalDtype
 from scipy import stats
+from sklearn.preprocessing import LabelEncoder
 
-from modelsML import LE
 
 
 def graph_plot(type, x, y, xlabel, ylabel, isSubplot, color):
@@ -25,15 +25,13 @@ def graph_plot(type, x, y, xlabel, ylabel, isSubplot, color):
         plt.pie(x, labels=xlabel, autopct='%1.1f%%')
 
 
-def my_function(): # gia emfanisi timwn tou graph
-    print("Hello from a function")
-
-
-df = pd.read_csv('Sleep_health_and_lifestyle_dataset.csv')
-df['BMI Category'].replace('Normal Weight', 'Under Weight', inplace=True)
-df['Sleep Disorder'].replace(np.nan, 'None', inplace=True)
 pd.set_option('display.max_columns', None)  #
 pd.set_option('display.width', None)  # fit more columns
+
+df = pd.read_csv('Sleep_health_and_lifestyle_dataset.csv')
+df.loc[df['BMI Category'] == 'Normal Weight', 'BMI Category'] = 'Under Weight'
+
+df.fillna({'Sleep Disorder': 'None'}, inplace=True)
 df[['sBP', 'dBP']] = df['Blood Pressure'].str.split('/', expand=True)
 df[['sBP', 'dBP']] = df[['sBP', 'dBP']].astype(int)
 df.loc[(df['sBP'] < 120) & (df['dBP'] < 80), 'BP category'] = 'normal'
@@ -46,27 +44,13 @@ print('\ndata types : \n', df.dtypes)  # verifying that data types are all corre
 print('\nmissing values : \n', df.isna().sum())  # missing values detection
 print('\nduplicates :\n', df[df.duplicated()])  # duplicates detection
 print('\n\n', df['BP category'].unique())  # Inconsistencies detection - in one column
-'''missing_values = df.isnull().sum()
-print("Missing Values:\n", missing_values)
 
-temp = df
-temp['Gender'] = pd.to_numeric(temp['Gender'], errors='coerce')
-z_scores = stats.zscore(temp)
-abs_z_scores = abs(z_scores)
-outlier_rows, outlier_cols = np.where(abs_z_scores > 3)
-print("Outlier Rows:", outlier_rows)
-
-# Assuming df is your DataFrame
-for column in df.columns:
-    print("Column:", column)
-    print(df[column].unique())
-'''
-plt.figure(figsize=(8, 6))
-categories=['Gender','Occupation','BMI Category']
+categories = ['Gender', 'Occupation', 'BMI Category']
+temp_df = df.copy()
+LE = LabelEncoder()
 for label in categories:
-    df[label]=LE.fit_transform(df[label])
-sb.heatmap(data=df.drop('Person ID', axis=1).corr(numeric_only=True), cmap="YlGnBu", annot=True)
-plt.legend()
+    temp_df[label] = LE.fit_transform(temp_df[label])
+sb.heatmap(data=temp_df.drop('Person ID', axis=1).corr(numeric_only=True), cmap="YlGnBu", annot=True)
 
 ####### summary statistics
 print("\nmode calculation :\n ", df.mode(numeric_only=True))
@@ -76,9 +60,8 @@ print('\n\n', df.describe(include='object'))  # statistics for categorical varia
 
 
 ###### data visualization
-'''sb.pairplot(data=df.drop('Person ID', axis=1), hue='Sleep Disorder')
-plt.legend()
-plt.show()'''
+sb.pairplot(data=df.drop('Person ID', axis=1), hue='Sleep Disorder')
+
 plt.figure(figsize=(8, 6))
 graph_plot('hist', df['Sleep Duration'],0,'Sleep Duration','Frequency',True, 'r')
 plt.figure(figsize=(8, 6))
@@ -98,6 +81,7 @@ graph_plot('hist', df['dBP'],0,'dBP','Frequency',True, 'r')
 plt.subplot(1, 2, 2)
 graph_plot('hist', df['sBP'],0,'sBP','Frequency',True, 'r')
 
+
 plt.figure(figsize=(8, 6))
 plt.subplot(1, 4, 1)
 graph_plot('scatter', df['Quality of Sleep'], df['Sleep Duration'], 'Quality of Sleep', 'Sleep Duration', True, 'r')
@@ -111,6 +95,8 @@ graph_plot('scatter', df['Quality of Sleep'], df['Stress Level'], 'Quality of Sl
 plt.figure(figsize=(8, 6))
 occupation_count = df['Occupation'].value_counts().reset_index()
 graph_plot('bar', occupation_count['Occupation'], occupation_count['count'], 'Occupation', 'Population', True, ['r', 'g', 'b'])
+
+
 
 plt.figure(figsize=(8, 6))
 gender_population = df['Gender'].value_counts().reset_index()
@@ -129,6 +115,8 @@ plt.subplot(2, 2, 4)
 sleep_disorder_counts = df['Sleep Disorder'].value_counts().reset_index()
 graph_plot('bar', sleep_disorder_counts['Sleep Disorder'], sleep_disorder_counts['count'], 'Sleep Disorder', 'Count', True, ['r', 'g', 'b'])
 
+
+
 plt.figure(figsize=(8, 6))
 bpCat_counts = df['BP category'].value_counts().reset_index()
 graph_plot('bar', bpCat_counts['BP category'], bpCat_counts['count'], 'blood pressure category', 'Count', True, ['r', 'g', 'b'])
@@ -139,6 +127,7 @@ graph_plot('pie', genderCounts['count'], 0,  genderCounts['Occupation'], 0, True
 
 plt.figure(figsize=(8, 6))
 graph_plot('pie', sleep_disorder_counts['count'], 0,  sleep_disorder_counts['Sleep Disorder'], 0, True, ['r', 'g', 'b'])
+plt.show()
 
 plt.figure(figsize=(8, 6))
 avgSleepQltBySlDisorder = round(df.groupby('Sleep Disorder')['Quality of Sleep'].mean(), 2)
@@ -221,8 +210,6 @@ ind = np.arange(N)
 width = 0.2  # Adjust the width as needed
 slBmiStressLevels = df.groupby(['Sleep Disorder','BMI Category'])['Stress Level'].mean().reset_index()
 slBmiStressLevels = slBmiStressLevels[slBmiStressLevels['BMI Category'] != 'Obese']
-#exit(slBmiStressLevels)
-#exit(slDisorderPerBMIcat)
 xvals = slBmiStressLevels.loc[slBmiStressLevels['BMI Category'] == 'Under Weight', 'Stress Level']
 bar1 = plt.bar(ind - width, xvals, width, color='r')
 yvals = slBmiStressLevels.loc[slBmiStressLevels['BMI Category'] == 'Normal', 'Stress Level']
@@ -234,8 +221,6 @@ plt.ylabel('Stress Levels (AVG)')
 plt.title("Effects of BMI and sleep  on Stress levels")
 plt.xticks(ind + width, slBmiStressLevels['Sleep Disorder'].unique())
 plt.legend((bar1, bar2, bar3), ('Underweight ', 'Normal', 'Overweight'))
-
-
 
 plt.show()
 plt.savefig(sys.stdout.buffer)
