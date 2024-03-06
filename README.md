@@ -7,7 +7,7 @@
       1. [Bar-Pie Charts](#Bar-Pie-Charts)
       2. [Scatter Plots](#Scatter-Plots)
       3. [Histograms](#Histograms)
-   2. [Correlation analysis]
+   2. [Correlation analysis](#correlation-analysis)
 6. [Classification](#classification)
 7. [Model evaluation](model-evaluation)
    
