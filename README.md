@@ -8,8 +8,10 @@
       2. [Scatter Plots](#Scatter-Plots)
       3. [Histograms](#Histograms)
    2. [Correlation analysis](#correlation-analysis)
-6. [Classification](#classification)
-7. [Model evaluation](model-evaluation)
+5. [Classification algorithms](#classification)
+   1. [Support Vector Classifier](#svc)
+   2. [Logistic Regression](#llc)
+6. [Models evaluation](model-evaluation)
    
 
 
@@ -25,7 +27,6 @@ The aim of this project is to analyze the Sleep Health and Lifestyle Dataset, wh
 # 2. Dataset Description
 The dataset used in this project can be accessed  through Kaggle. You can find more information here : https://www.kaggle.com/datasets/uom190346a/sleep-health-and-lifestyle-dataset
 
-# 3. Statistical information
 
 
 # 4. Exploratory Data Analysis (EDA)
