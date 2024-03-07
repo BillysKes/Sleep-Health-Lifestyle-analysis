@@ -2,7 +2,7 @@
 1. [Project Overview](#project-overview)
 2. [Dataset Description](#dataset-description)
 3. [Statistical Information](#statistical-information)
-4. [Visualizations)](#visualizations)
+4. [Visualizations](#visualizations)
    1. [Bar-Pie Charts](#Bar-Pie-Charts)
    2. [Scatter Plots](#Scatter-Plots)
    3. [Histograms](#Histograms)
