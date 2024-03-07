@@ -27,6 +27,27 @@ The aim of this project is to analyze the Sleep Health and Lifestyle Dataset, wh
 The dataset used in this project can be accessed  through Kaggle. You can find more information here : https://www.kaggle.com/datasets/uom190346a/sleep-health-and-lifestyle-dataset
 
 
+# 3. Statistical Information
+'''
+        Person ID     Age  Sleep Duration  Quality of Sleep  Physical Activity Level  Stress Level  Heart Rate  Daily Steps     sBP     dBP
+count     374.00  374.00          374.00            374.00                   374.00        374.00      374.00       374.00  374.00  374.00
+mean      187.50   42.18            7.13              7.31                    59.17          5.39       70.17      6816.84  128.55   84.65
+std       108.11    8.67            0.80              1.20                    20.83          1.77        4.14      1617.92    7.75    6.16
+min         1.00   27.00            5.80              4.00                    30.00          3.00       65.00      3000.00  115.00   75.00
+25%        94.25   35.25            6.40              6.00                    45.00          4.00       68.00      5600.00  125.00   80.00
+50%       187.50   43.00            7.20              7.00                    60.00          5.00       70.00      7000.00  130.00   85.00
+75%       280.75   50.00            7.80              8.00                    75.00          7.00       72.00      8000.00  135.00   90.00
+max       374.00   59.00            8.50              9.00                    90.00          8.00       86.00     10000.00  142.00   95.00
+'''
+
+'''
+       Gender Occupation BMI Category Blood Pressure Sleep Disorder           BP category
+count     374        374          374            374            374                   374
+unique      2         11            4             25              3                     4
+top      Male      Nurse       Normal         130/85           None  hypertension stage 1
+freq      189         73          195             99            219                   232
+'''
+
 
 # 4. Visualizations
  
