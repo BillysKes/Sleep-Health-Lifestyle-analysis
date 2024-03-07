@@ -28,7 +28,7 @@ The dataset used in this project can be accessed  through Kaggle. You can find m
 
 
 # 3. Statistical Information
-'''
+```
         Person ID     Age  Sleep Duration  Quality of Sleep  Physical Activity Level  Stress Level  Heart Rate  Daily Steps     sBP     dBP
 count     374.00  374.00          374.00            374.00                   374.00        374.00      374.00       374.00  374.00  374.00
 mean      187.50   42.18            7.13              7.31                    59.17          5.39       70.17      6816.84  128.55   84.65
@@ -38,15 +38,15 @@ min         1.00   27.00            5.80              4.00                    30
 50%       187.50   43.00            7.20              7.00                    60.00          5.00       70.00      7000.00  130.00   85.00
 75%       280.75   50.00            7.80              8.00                    75.00          7.00       72.00      8000.00  135.00   90.00
 max       374.00   59.00            8.50              9.00                    90.00          8.00       86.00     10000.00  142.00   95.00
-'''
+```
 
-'''
+```
        Gender Occupation BMI Category Blood Pressure Sleep Disorder           BP category
 count     374        374          374            374            374                   374
 unique      2         11            4             25              3                     4
 top      Male      Nurse       Normal         130/85           None  hypertension stage 1
 freq      189         73          195             99            219                   232
-'''
+```
 
 
 # 4. Visualizations
