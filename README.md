@@ -48,7 +48,7 @@ df.loc[(((df['sBP'] < 130) & (df['sBP'] >= 120)) & (df['dBP'] < 80)), 'BP catego
 df.loc[(((df['sBP']) < 140 & (df['sBP'] >= 130)) | ((df['dBP'] < 90) & (df['dBP'] >= 80))), 'BP category'] = 'hypertension stage 1'
 df.loc[(df['sBP'] >= 140) | (df['dBP'] >= 90), 'BP category'] = 'hypertension stage 2'
 ```
-We create two seperate columns for systolic and diastolic Blood pressure. Also, we create another column to label in which BP category the individual belongs to, based on American Heart Association blood pressure guidelines.
+We create two seperate columns for systolic and diastolic Blood pressure. Also, we create another column to label in which BP category the individual belongs to, based on American Heart Association(AHA) guidelines.
 
 # 4. Statistical Information
 ```
