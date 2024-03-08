@@ -30,7 +30,18 @@ The dataset used in this project can be accessed  through Kaggle. You can find m
 # 3. Data preprocessing
 ```
 df.loc[df['BMI Category'] == 'Normal Weight', 'BMI Category'] = 'Under Weight'
+```
+While examining the unique values of BMI Category, we find out a data entry error : ['Overweight' 'Normal' 'Obese' 'Normal Weight']. Under weight category is missing and the normal category is duplicated, so we replace 'Normal Weight' with 'Under Weight'.
+
+```
+
+```
 df.fillna({'Sleep Disorder': 'None'}, inplace=True)
+```
+Missing values of Sleep disorder are being filled with a string value. 
+
+
+```
 df[['sBP', 'dBP']] = df['Blood Pressure'].str.split('/', expand=True)
 df[['sBP', 'dBP']] = df[['sBP', 'dBP']].astype(int)
 df.loc[(df['sBP'] < 120) & (df['dBP'] < 80), 'BP category'] = 'normal'
@@ -38,7 +49,7 @@ df.loc[(((df['sBP'] < 130) & (df['sBP'] >= 120)) & (df['dBP'] < 80)), 'BP catego
 df.loc[(((df['sBP']) < 140 & (df['sBP'] >= 130)) | ((df['dBP'] < 90) & (df['dBP'] >= 80))), 'BP category'] = 'hypertension stage 1'
 df.loc[(df['sBP'] >= 140) | (df['dBP'] >= 90), 'BP category'] = 'hypertension stage 2'
 ```
-
+We create two seperate columns for systolic and diastolic Blood pressure. Also, we create another column to label in which BP category the individual belongs to, based on American Heart Association blood pressure guidelines.
 
 # 4. Statistical Information
 ```
