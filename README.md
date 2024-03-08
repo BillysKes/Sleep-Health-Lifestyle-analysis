@@ -145,6 +145,8 @@ sb.heatmap(data=temp_df.drop('Person ID', axis=1).corr(numeric_only=True), cmap=
 Categorical variables such as Gender, Occupation and BMI Category are encoded into numerical labels in order to include them in the correlation analysis.
 ![betterheatmap](https://github.com/BillysKes/Sleep-Health-Lifestyle-analysis/assets/73298709/56c06e40-2542-47a2-9866-be421a680849)
 
+
+## Exploring the relationship between variables and the impact of sleep disorder
 ![pair plot ](https://github.com/BillysKes/Sleep-Health-Lifestyle-analysis/assets/73298709/d8dcb03d-036a-40e2-83d3-2ec837ddbd2f)
 ![pair plot for SbpDbppng](https://github.com/BillysKes/Sleep-Health-Lifestyle-analysis/assets/73298709/7bc372c8-2fbd-4a4c-9218-9449cb37df7f)
 
