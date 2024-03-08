@@ -28,6 +28,17 @@ The aim of this project is to analyze the Sleep Health and Lifestyle Dataset, wh
 The dataset used in this project can be accessed  through Kaggle. You can find more information here : https://www.kaggle.com/datasets/uom190346a/sleep-health-and-lifestyle-dataset
 
 # 3. Data preprocessing
+```
+df.loc[df['BMI Category'] == 'Normal Weight', 'BMI Category'] = 'Under Weight'
+df.fillna({'Sleep Disorder': 'None'}, inplace=True)
+df[['sBP', 'dBP']] = df['Blood Pressure'].str.split('/', expand=True)
+df[['sBP', 'dBP']] = df[['sBP', 'dBP']].astype(int)
+df.loc[(df['sBP'] < 120) & (df['dBP'] < 80), 'BP category'] = 'normal'
+df.loc[(((df['sBP'] < 130) & (df['sBP'] >= 120)) & (df['dBP'] < 80)), 'BP category'] = 'elevated'
+df.loc[(((df['sBP']) < 140 & (df['sBP'] >= 130)) | ((df['dBP'] < 90) & (df['dBP'] >= 80))), 'BP category'] = 'hypertension stage 1'
+df.loc[(df['sBP'] >= 140) | (df['dBP'] >= 90), 'BP category'] = 'hypertension stage 2'
+```
+
 
 # 4. Statistical Information
 ```
@@ -113,6 +124,15 @@ There is a high positive correlation of quality of sleep and sleep duration whic
 
 # 6. Correlation analysis
 
+```
+categories = ['Gender', 'Occupation', 'BMI Category']
+temp_df = df.copy()
+LE = LabelEncoder()
+for label in categories:
+    temp_df[label] = LE.fit_transform(temp_df[label])
+sb.heatmap(data=temp_df.drop('Person ID', axis=1).corr(numeric_only=True), cmap="YlGnBu", annot=True)
+```
+Categorical variables such as Gender, Occupation and BMI Category are encoded into numerical labels in order to include them in the correlation analysis.
 ![betterheatmap](https://github.com/BillysKes/Sleep-Health-Lifestyle-analysis/assets/73298709/56c06e40-2542-47a2-9866-be421a680849)
 
 ![pair plot ](https://github.com/BillysKes/Sleep-Health-Lifestyle-analysis/assets/73298709/d8dcb03d-036a-40e2-83d3-2ec837ddbd2f)
