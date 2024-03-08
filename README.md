@@ -33,7 +33,6 @@ df.loc[df['BMI Category'] == 'Normal Weight', 'BMI Category'] = 'Under Weight'
 ```
 While examining the unique values of BMI Category, we find out a data entry error : ['Overweight' 'Normal' 'Obese' 'Normal Weight']. Under weight category is missing and the normal category is duplicated, so we replace 'Normal Weight' with 'Under Weight'.
 
-```
 
 ```
 df.fillna({'Sleep Disorder': 'None'}, inplace=True)
