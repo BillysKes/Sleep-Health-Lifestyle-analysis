@@ -2,15 +2,16 @@
 1. [Project Overview](#project-overview)
 2. [Dataset Description](#dataset-description)
 3. [Statistical Information](#statistical-information)
-4. [Visualizations](#visualizations)
+4. [Data preprocessing](#data-preprocessing)
+5. [Visualizations](#visualizations)
    1. [Bar-Pie Charts](#Bar-Pie-Charts)
    2. [Scatter Plots](#Scatter-Plots)
    3. [Histograms](#Histograms)
-5. [Correlation analysis](#correlation-analysis)
-6. [Classification algorithms](#classification)
+6. [Correlation analysis](#correlation-analysis)
+7. [Classification algorithms](#classification)
    1. [Support Vector Classifier](#svc)
    2. [Logistic Regression](#llc)
-7. [Models evaluation](model-evaluation)
+8. [Models evaluation](model-evaluation)
    
 
 
@@ -26,8 +27,9 @@ The aim of this project is to analyze the Sleep Health and Lifestyle Dataset, wh
 # 2. Dataset Description
 The dataset used in this project can be accessed  through Kaggle. You can find more information here : https://www.kaggle.com/datasets/uom190346a/sleep-health-and-lifestyle-dataset
 
+# 3. Data preprocessing
 
-# 3. Statistical Information
+# 4. Statistical Information
 ```
         Person ID     Age  Sleep Duration  Quality of Sleep  Physical Activity Level  Stress Level  Heart Rate  Daily Steps     sBP     dBP
 count     374.00  374.00          374.00            374.00                   374.00        374.00      374.00       374.00  374.00  374.00
@@ -49,10 +51,10 @@ freq      189         73          195             99            219             
 ```
 
 
-# 4. Visualizations
+# 5. Visualizations
  
 
-## 4.1 Bar-Pie Charts
+## 5.1 Bar-Pie Charts
 <a name="Bar-Pie-Charts"></a>
 
 
@@ -84,7 +86,7 @@ freq      189         73          195             99            219             
 
 
 
-## 4.2 Scatter Plots
+## 5.2 Scatter Plots
 <a name="Scatter-Plots"></a>
 There is a high positive correlation of quality of sleep and sleep duration which means that individuals who sleep longer have higher scores on quality of sleep. Also, there is a negative correlation of heart rate and daily steps which means, individuals who doens't walk a lot tend to have higher heart rate. Also, there is a positive correlation of sbP and dBP which means, individuals with high systolic blood pressure also have high diastolic blood pressure and the reverse. We also notice that high stress levels are associated with low quality of sleep(negative correlation).
 
@@ -96,7 +98,7 @@ There is a high positive correlation of quality of sleep and sleep duration whic
 ![scatterplots](https://github.com/BillysKes/Sleep-Health-Lifestyle-analysis/assets/73298709/987df6e0-d07f-4de2-a94e-69ccee17d74c)
 
 
-### 4.3 Histograms
+### 5.3 Histograms
 <a name="histograms"></a>
 
 - Positive skewness most individuals heart rate is on the range of 65-73 bpm(bits per minute)
@@ -109,7 +111,7 @@ There is a high positive correlation of quality of sleep and sleep duration whic
 ![systolicAnddiastolicBP_hist](https://github.com/BillysKes/Sleep-Health-Lifestyle-analysis/assets/73298709/5f628f51-1326-42dc-9911-f8aeaeea268f)
 
 
-# 5. Correlation analysis
+# 6. Correlation analysis
 
 ![betterheatmap](https://github.com/BillysKes/Sleep-Health-Lifestyle-analysis/assets/73298709/56c06e40-2542-47a2-9866-be421a680849)
 
@@ -117,10 +119,10 @@ There is a high positive correlation of quality of sleep and sleep duration whic
 ![pair plot for SbpDbppng](https://github.com/BillysKes/Sleep-Health-Lifestyle-analysis/assets/73298709/7bc372c8-2fbd-4a4c-9218-9449cb37df7f)
 
 
-# 6. Classification
+# 7. Classification
 
 
-# 7. Model evaluation
+# 8. Model evaluation
 
 
 
