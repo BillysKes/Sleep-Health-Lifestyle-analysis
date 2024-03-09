@@ -8,7 +8,7 @@
    2. [Scatter Plots](#Scatter-Plots)
    3. [Histograms](#Histograms)
 6. [Correlation analysis](#correlation-analysis)
-7. [Classification algorithms](#classification)
+7. [Classification](#classification)
    1. [Support Vector Classifier](#svc)
    2. [Logistic Regression](#llc)
 8. [Models evaluation](model-evaluation)
