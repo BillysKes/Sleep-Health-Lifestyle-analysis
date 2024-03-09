@@ -11,8 +11,6 @@
 7. [Classification](#classification)
    1. [Support Vector Classifier](#svc)
    2. [Logistic Regression](#llc)
-8. [Models evaluation](model-evaluation)
-   
 
 
 
