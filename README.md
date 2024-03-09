@@ -145,6 +145,17 @@ sb.heatmap(data=temp_df.drop('Person ID', axis=1).corr(numeric_only=True), cmap=
 Categorical variables such as Gender, Occupation and BMI Category are encoded into numerical labels in order to include them in the correlation analysis.
 ![betterheatmap](https://github.com/BillysKes/Sleep-Health-Lifestyle-analysis/assets/73298709/56c06e40-2542-47a2-9866-be421a680849)
 
+Generally positive correlations between :
+- blood pressure and age
+- quality of sleep and sleep duration
+- daily steps and physical activity level
+- stress level and heart rate
+
+Generaly negative correlations between : 
+- stress level an sleep duration
+- stress level and quality of sleep
+- heart rate and quality of sleep
+
 
 ## Exploring the relationship between variables and the impact of sleep disorder
 ![pair plot ](https://github.com/BillysKes/Sleep-Health-Lifestyle-analysis/assets/73298709/d8dcb03d-036a-40e2-83d3-2ec837ddbd2f)
