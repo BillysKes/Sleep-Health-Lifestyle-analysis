@@ -166,6 +166,45 @@ sb.pairplot(data=df.drop('Person ID', axis=1), hue='Sleep Disorder')
 
 # 7. Classification
 
+```
+k_folds = 5
+kf = KFold(n_splits=k_folds, shuffle=True, random_state=42)
+conf_matrices, scores = [], []
+models = {'LR': LogisticRegression(max_iter=100), 'SVC': SVC()}
+
+for name, model in models.items():
+    scores = []
+    i = 0
+    fig, axes = plt.subplots(1, 5, figsize=(15, 7))  # Adjust figure size as needed
+
+    for train_index, test_index in kf.split(x):
+        X_train, X_test = x[train_index], x[test_index]
+        y_train, y_test = y[train_index], y[test_index]
+        model.fit(X_train, y_train)
+        i = i + 1
+        y_pred = model.predict(X_test)
+        conf_matrix = confusion_matrix(y_test, y_pred)
+        conf_matrices.append(conf_matrix)
+        # Calculate accuracy score
+        score = model.score(X_test, y_test)
+        scores.append(score)
+        cm = confusion_matrix(y_pred, y_test)
+        ax = sns.heatmap(cm, cmap='BuPu', fmt='',linewidth=3, annot=True,
+                         xticklabels=(['(None)', '(Sleep_Apnea)', '(Insomnia)']),
+                         yticklabels=(['(None)', '(Sleep_Apnea)', '(Insomnia)']),
+                         ax=axes[i - 1])  # Assign the axis object here
+        ax.set_aspect('equal')  # Adjust aspect ratio here
+        ax.set_yticklabels(ax.get_xticklabels(), rotation=0)
+        ax.set_title("CM of " + name+" in fold "+str(i))
+        ax.set_xlabel('Predicted Label')
+        ax.set_ylabel('True Label')
+        plt.subplots_adjust(hspace=0.5, wspace=0.5)
+    mean_score = np.mean(scores)
+    print(name, " Mean Accuracy Score:", mean_score)
+plt.tight_layout()
+plt.show()
+```
+
 ## 7.1 Support Vector Classification
 
 ![svc-5fold-CM](https://github.com/BillysKes/Sleep-Health-Lifestyle-analysis/assets/73298709/63dad22e-3098-476f-867b-85d9d87938be)
