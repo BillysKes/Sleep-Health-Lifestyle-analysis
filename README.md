@@ -166,7 +166,7 @@ sb.pairplot(data=df.drop('Person ID', axis=1), hue='Sleep Disorder')
 
 # 7. Classification
 
-## 7.1 Support Vector Classifier
+## 7.1 Support Vector Classification
 
 ![svc-5fold-CM](https://github.com/BillysKes/Sleep-Health-Lifestyle-analysis/assets/73298709/63dad22e-3098-476f-867b-85d9d87938be)
 
