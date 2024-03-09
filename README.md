@@ -1,7 +1,7 @@
 # Table of Contents
 1. [Project Overview](#project-overview)
 2. [Dataset Description](#dataset-description)
-3. [Statistical Information](#statistical-information)
+3. [Summary Statistics](#summary-statistics)
 4. [Data preprocessing](#data-preprocessing)
 5. [Visualizations](#visualizations)
    1. [Bar-Pie Charts](#Bar-Pie-Charts)
@@ -50,7 +50,7 @@ df.loc[(df['sBP'] >= 140) | (df['dBP'] >= 90), 'BP category'] = 'hypertension st
 ```
 We create two seperate columns for systolic and diastolic Blood pressure. Also, we create another column to label in which BP category the individual belongs to, based on American Heart Association(AHA) guidelines.
 
-# 4. Statistical Information
+# 4. Summary Statistics
 ```
         Person ID     Age  Sleep Duration  Quality of Sleep  Physical Activity Level  Stress Level  Heart Rate  Daily Steps     sBP     dBP
 count     374.00  374.00          374.00            374.00                   374.00        374.00      374.00       374.00  374.00  374.00
