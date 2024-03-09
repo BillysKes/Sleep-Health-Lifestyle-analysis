@@ -173,7 +173,7 @@ sb.pairplot(data=df.drop('Person ID', axis=1), hue='Sleep Disorder')
 ## 7.2 Logistic Regression
 ![lr-5fold-CM](https://github.com/BillysKes/Sleep-Health-Lifestyle-analysis/assets/73298709/abcb56ee-3815-4b24-91d2-8b16dcb6571a)
 
-# 8. Model evaluation
+
 
 
 
