@@ -6,7 +6,7 @@ from sklearn.model_selection import train_test_split, KFold, cross_val_score
 from sklearn.svm import SVC
 import matplotlib.pyplot as plt
 from sklearn.preprocessing import LabelEncoder #for converting non-numeric data (String or Boolean) into numbers
-from sklearn.metrics import confusion_matrix
+from sklearn.metrics import confusion_matrix, classification_report
 
 pd.set_option('display.max_columns', None)  #
 pd.set_option('display.width', None)  # fit more columns
@@ -48,7 +48,8 @@ for name, model in models.items():
     scores = []
     i = 0
     fig, axes = plt.subplots(1, 5, figsize=(15, 7))  # Adjust figure size as needed
-
+    all_y_pred = []
+    all_y_test = []
     for train_index, test_index in kf.split(x):
         X_train, X_test = x[train_index], x[test_index]
         y_train, y_test = y[train_index], y[test_index]
@@ -71,6 +72,10 @@ for name, model in models.items():
         ax.set_xlabel('Predicted Label')
         ax.set_ylabel('True Label')
         plt.subplots_adjust(hspace=0.5, wspace=0.5)
+        all_y_pred.extend(y_pred)
+        all_y_test.extend(y_test)
+    overall_report = classification_report(all_y_test, all_y_pred)
+    print("Overall Classification Report:\n", overall_report)
     mean_score = round(np.mean(scores),3)
     print(name, " Mean Accuracy Score:", mean_score)
 plt.tight_layout()
