@@ -3,10 +3,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sb
-from pandas.api.types import CategoricalDtype
-from scipy import stats
 from sklearn.preprocessing import LabelEncoder
-
 
 
 def graph_plot(type, x, y, xlabel, ylabel, isSubplot, color):
@@ -31,6 +28,7 @@ pd.set_option('display.max_columns', None)  #
 pd.set_option('display.width', None)  # fit more columns
 
 df = pd.read_csv('Sleep_health_and_lifestyle_dataset.csv')
+
 df.loc[df['BMI Category'] == 'Normal Weight', 'BMI Category'] = 'Under Weight'
 
 df.fillna({'Sleep Disorder': 'None'}, inplace=True)
@@ -46,6 +44,10 @@ print('\ndata types : \n', df.dtypes)  # verifying that data types are all corre
 print('\nmissing values : \n', df.isna().sum())  # missing values detection
 print('\nduplicates :\n', df[df.duplicated()])  # duplicates detection
 print('\n\n', df['BP category'].unique())  # Inconsistencies detection - in one column
+numeric_columns = df.select_dtypes(include=np.number)
+z_scores = np.abs((numeric_columns - numeric_columns.mean()) / numeric_columns.std())
+outlier_rows = z_scores > 3
+
 
 categories = ['Gender', 'Occupation', 'BMI Category']
 temp_df = df.copy()
@@ -59,7 +61,6 @@ print("\nmode calculation :\n ", df.mode(numeric_only=True))
 #print(df[['Gender', 'BMI Category', 'Sleep Disorder']].value_counts(), "\n")  # frequencies
 print("\n\n", round(df.describe(), 2))  # statistics information
 print('\n\n', df.describe(include='object'))  # statistics for categorical variables
-
 
 ###### data visualization
 sb.pairplot(data=df.drop('Person ID', axis=1), hue='Sleep Disorder')
@@ -91,7 +92,6 @@ graph_plot('scatter', df['Quality of Sleep'], df['Stress Level'], 'Quality of Sl
 
 occupation_count = df['Occupation'].value_counts().reset_index()
 graph_plot('bar', occupation_count['Occupation'], occupation_count['count'], 'Occupation', 'Population', 0, ['r', 'g', 'b'])
-
 
 
 gender_population = df['Gender'].value_counts().reset_index()
@@ -179,7 +179,6 @@ N = 3
 ind = np.arange(N)
 width = 0.2  # Adjust the width as needed
 slDisorderPerBMIcat = df.groupby('Sleep Disorder')['BMI Category'].value_counts().reset_index()
-#exit(slDisorderPerBMIcat)
 xvals = slDisorderPerBMIcat.loc[slDisorderPerBMIcat['BMI Category'] == 'Under Weight', 'count']
 bar1 = plt.bar(ind - width, xvals, width, color='r')
 yvals = slDisorderPerBMIcat.loc[slDisorderPerBMIcat['BMI Category'] == 'Normal', 'count']
@@ -193,7 +192,6 @@ plt.ylabel('Counts')
 plt.title("Distribution of BMI categories per sleep disorder")
 plt.xticks(ind + width, slDisorderPerBMIcat['Sleep Disorder'].unique())
 plt.legend((bar1, bar2, bar3, bar4), ('Underweight ', 'Normal', 'Overweight', 'Obese'))
-#exit(slDisorderPerBMIcat['Insomnia'])
 
 plt.figure(figsize=(8, 6))
 N = 3
@@ -217,5 +215,4 @@ plt.show()
 plt.savefig(sys.stdout.buffer)
 sys.stdout.flush()
 
-###### correlation analysis
-print("\ncorrelations: ", round(df.corr(numeric_only=True), 3))
+
