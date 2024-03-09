@@ -212,6 +212,68 @@ Mean Accuracy Score for svc model is 87.2%
 
 ### Confusion matrix
 ![svc-5fold-CM](https://github.com/BillysKes/Sleep-Health-Lifestyle-analysis/assets/73298709/63dad22e-3098-476f-867b-85d9d87938be)
+```
+LR - Fold 1 - Classification Report:
+              precision    recall  f1-score   support
+
+         0.0       0.91      0.95      0.93        43
+         1.0       0.91      0.62      0.74        16
+         2.0       0.74      0.88      0.80        16
+
+    accuracy                           0.87        75
+   macro avg       0.85      0.82      0.82        75
+weighted avg       0.87      0.87      0.86        75
+
+
+LR - Fold 2 - Classification Report:
+              precision    recall  f1-score   support
+
+         0.0       0.90      0.95      0.92        38
+         1.0       0.94      0.81      0.87        21
+         2.0       0.76      0.81      0.79        16
+
+    accuracy                           0.88        75
+   macro avg       0.87      0.86      0.86        75
+weighted avg       0.88      0.88      0.88        75
+
+
+LR - Fold 3 - Classification Report:
+              precision    recall  f1-score   support
+
+         0.0       0.90      0.86      0.88        44
+         1.0       0.78      0.82      0.80        17
+         2.0       0.67      0.71      0.69        14
+
+    accuracy                           0.83        75
+   macro avg       0.78      0.80      0.79        75
+weighted avg       0.83      0.83      0.83        75
+
+
+
+
+LR - Fold 4 - Classification Report:
+              precision    recall  f1-score   support
+
+         0.0       0.98      0.93      0.95        54
+         1.0       0.73      0.89      0.80         9
+         2.0       0.85      0.92      0.88        12
+
+    accuracy                           0.92        75
+   macro avg       0.85      0.91      0.88        75
+weighted avg       0.93      0.92      0.92        75
+
+
+LR - Fold 5 - Classification Report:
+              precision    recall  f1-score   support
+
+         0.0       0.92      0.88      0.90        40
+         1.0       0.68      0.87      0.76        15
+         2.0       0.94      0.84      0.89        19
+
+    accuracy                           0.86        74
+   macro avg       0.85      0.86      0.85        74
+weighted avg       0.88      0.86      0.87        74
+```
 
 ## 7.2 Logistic Regression
 Mean Accuracy Score for lr model is 71.1%
