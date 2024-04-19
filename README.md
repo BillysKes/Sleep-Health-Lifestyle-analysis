@@ -175,7 +175,7 @@ models = {'LR': LogisticRegression(max_iter=100), 'SVC': SVC()}
 for name, model in models.items():
     scores = []
     i = 0
-    fig, axes = plt.subplots(1, 5, figsize=(15, 7))  # Adjust figure size as needed
+    fig, axes = plt.subplots(1, 5, figsize=(15, 7))
 
     for train_index, test_index in kf.split(x):
         X_train, X_test = x[train_index], x[test_index]
@@ -192,8 +192,8 @@ for name, model in models.items():
         ax = sns.heatmap(cm, cmap='BuPu', fmt='',linewidth=3, annot=True,
                          xticklabels=(['(None)', '(Sleep_Apnea)', '(Insomnia)']),
                          yticklabels=(['(None)', '(Sleep_Apnea)', '(Insomnia)']),
-                         ax=axes[i - 1])  # Assign the axis object here
-        ax.set_aspect('equal')  # Adjust aspect ratio here
+                         ax=axes[i - 1])  
+        ax.set_aspect('equal')
         ax.set_yticklabels(ax.get_xticklabels(), rotation=0)
         ax.set_title("CM of " + name+" in fold "+str(i))
         ax.set_xlabel('Predicted Label')
