@@ -107,7 +107,7 @@ freq      189         73          195             99            219             
 
 ## 5.2 Scatter Plots
 <a name="Scatter-Plots"></a>
-There is a high positive correlation of quality of sleep and sleep duration which means that individuals who sleep longer have higher scores on quality of sleep. Also, there is a negative correlation of heart rate and daily steps which means, individuals who doens't walk a lot tend to have higher heart rate. Also, there is a positive correlation of sbP and dBP which means, individuals with high systolic blood pressure also have high diastolic blood pressure and the reverse. We also notice that high stress levels are associated with low quality of sleep(negative correlation).
+
 
 - Positive correlation of quality of sleep and sleep duration. As sleep duration increases we notice that individuals report higher ratings on quality of sleep as well whereas the exact opposite happens when sleep duration is shorter.
 - Negative correlation of the heart rate(bpm) and the daily steps taken. Individuals who walk more tend to have more normal heart rate due to the benefits of cardiovascular exercise
