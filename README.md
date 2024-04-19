@@ -170,7 +170,7 @@ sb.pairplot(data=df.drop('Person ID', axis=1), hue='Sleep Disorder')
 k_folds = 5
 kf = KFold(n_splits=k_folds, shuffle=True, random_state=42)
 conf_matrices, scores = [], []
-models = {'LR': LogisticRegression(max_iter=100), 'SVC': SVC()}
+models = {'LR': LogisticRegression(max_iter=100, multi_class='ovr'), 'SVC': SVC(decision_function_shape='ovr')}
 
 for name, model in models.items():
     scores = []
