@@ -205,7 +205,7 @@ plt.tight_layout()
 plt.show()
 ```
 
-We use 5-fold cross-validation to evaluate our models and we also compute a confusion matrix in each fold.
+We use 5-fold cross-validation to evaluate our models and we also compute a confusion matrix in each fold. The models used for classification are logistic regression (LR) and support vector classifier (SVC) and both of them are configured for multiclass classification using the one-vs-rest (OvR) strategy. Finally, it calculates the mean accuracy score across all folds for both of the models.
 
 ## 7.1 Support Vector Classification 
 Mean Accuracy Score for svc model is 71.1%
