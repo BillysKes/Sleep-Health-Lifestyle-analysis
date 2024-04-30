@@ -101,7 +101,15 @@ freq      189         73          195             99            219             
 
 ![bmiDistributionperSleepDisorder](https://github.com/BillysKes/Sleep-Health-Lifestyle-analysis/assets/73298709/1c28a43c-538f-433f-804b-684cac6d7422)
 
+
+- Invididuals with no sleep disorder tend to have normal BMI also
+- Individuals with sleep disorder tend to be overweight also
+
 ![stressLVLbyBMIandSleep](https://github.com/BillysKes/Sleep-Health-Lifestyle-analysis/assets/73298709/ffea0327-3f26-47d2-b5bd-efbc1a1085cd)
+
+- Individuals with sleep disorder and being underweight at the same time, tend to have higher stress levels on average
+
+
 
 
 
