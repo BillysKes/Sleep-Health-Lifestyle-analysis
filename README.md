@@ -196,8 +196,7 @@ for name, model in models.items():
         # Calculate accuracy score
         score = model.score(X_test, y_test)
         scores.append(score)
-        cm = confusion_matrix(y_pred, y_test)
-        ax = sns.heatmap(cm, cmap='BuPu', fmt='',linewidth=3, annot=True,
+        ax = sns.heatmap(conf_matrix, cmap='BuPu', fmt='',linewidth=3, annot=True,
                          xticklabels=(['(None)', '(Sleep_Apnea)', '(Insomnia)']),
                          yticklabels=(['(None)', '(Sleep_Apnea)', '(Insomnia)']),
                          ax=axes[i - 1])  
